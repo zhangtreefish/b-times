@@ -104,8 +104,7 @@ li.nav__item {
   width: 25%;
   text-align: center;
   line-height: 24px;
-  padding: 1.5em;
-  text-transform: uppercase;
+  text-transform: uppercase; /*remove padding:1.5em from here; only .nav a needs padding */
 }
 
 .nav a {
@@ -361,22 +360,14 @@ main {
   text-decoration: underline;
 }
  /*the media query did not work when it was placed before the weather */
-@media screen and (max-width: 450px){
-  .nav__item {
-  line-height: 8px;
-  padding: 1.1em;
-  }
+@media screen and (max-width: 650px){
   .nav a {
-  padding: 1.1em;
-  min-width: 48px;
-  }
-  li a {
+    padding: 0;
     font-size: 18px;
   }
 }
 
 @media screen and (min-width: 451px){
-
   .scores {
     width: 50%;
   }
@@ -394,22 +385,18 @@ main {
     transition: transform 0.3s ease;
   }
 }*/
- @media screen and (min-width: 600px) {
 
-        /* We open the drawer. */
-        nav {
-          position:relative;
-          transform: translate(0, 0);
-        }
-      }
 @media screen and (min-width: 900px){
   .hero {
     width: 50%;
     padding:40px; /*setting margin at 20px disables side-by-side of hero and top-news */
   }
-  li.nav__item {
+ li.nav__item {
   margin: 0;
-  }  /*eliminating margin finally allows all four nav items to appear in 1 single row */
+  } /*eliminating margin finally allows all four nav items to appear in 1 single row, see nav below */
+  nav {
+    padding: 20px;
+    }  /*adding padding allows nav content not to overlap with main, see above */
   .top-news {
     width: 50%;
     padding:100px;
@@ -424,13 +411,13 @@ main {
 
   }
 }
-@media screen and (min-width: 1850px){
+@media screen and (min-width: 1250px){
 
-  *{
+  main {
     font-size: 1.1em;
     }
   body {
-    width: 1850px;
+    width: 1250px;
     margin-left:auto;
     margin-right:auto;
    }
