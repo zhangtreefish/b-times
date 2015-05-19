@@ -12,7 +12,7 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  margin: 0; 
+  margin: 0;
 }
 
 header, nav, footer, section, article, div {
@@ -29,7 +29,7 @@ ul {
 /*
  *
  * Common
- * 
+ *
  */
 
 .news__more {
@@ -81,8 +81,9 @@ li.nav__item {
  *
  */
 
+
 .nav {
-  width: 800px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -91,15 +92,18 @@ li.nav__item {
   width: 100%;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
 .nav__item {
   box-sizing: border-box;
   display: inline-block;
-  width: 24%;
+  width: 25%;
   text-align: center;
   line-height: 24px;
-  padding: 24px;
+  padding: 1.5em;
   text-transform: uppercase;
 }
 
@@ -124,7 +128,7 @@ li.nav__item {
 
 main {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-  width: 800px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -178,6 +182,7 @@ main {
   padding: 1em;
 }
 
+
 .news__title {
   font-weight: 300;
   border-bottom: 1px solid #E0E0E0;
@@ -230,7 +235,7 @@ main {
 
 .scores__table th,
 .scores__table td {
-  padding: 1em; 
+  padding: 1em;
 }
 
 .scores__table th {
@@ -351,8 +356,38 @@ main {
 .snippet__title a:active {
   text-decoration: underline;
 }
+ /*the media query did not work when it was placed before the weather */
+@media screen and (min-width: 450px){
+  .scores {
+    width: 50%;
+    }
+  .weather {
+    width: 50%;
+  }
+}
 
-
+@media screen and (min-width: 900px){
+  .hero {
+    width: 50%;
+    padding:40px; /*setting margin at 20px disables side-by-side of hero and top-news */
+    order:-1;
+  }
+  li.nav__item {
+  margin: 0;
+  }  /*eliminating margin finally allows all four nav items to appear in 1 single row */
+  .top-news {
+    width: 50%;
+    padding:40px;
+  }
+  .scores {
+    padding:40px;
+    order:2;
+  }
+  .weather {
+    padding:40px;
+    order: 3;
+  }
+}
 /*
  *
  * Footer
