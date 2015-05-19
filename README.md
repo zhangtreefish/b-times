@@ -21,3 +21,8 @@ Part 1: change main.css inside Chrome DevTool to achieve responsiveness among al
 -.top-news_item
 
 * add min-width: 48px; to .nav a
+
+Part 2: change main.css by adding media queries with breakpoints set at 450 and 900 px; within the queries 
+* reset relative width to rearrange the boxes; 
+* add padding to optimize looks; 
+* remove margin in some cases to enable sharing the same row.
